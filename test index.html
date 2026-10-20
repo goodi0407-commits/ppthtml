@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>좌뇌형 우뇌형 성향 진단 테스트</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            background-color: #f7f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+        }
+        .question-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result-section {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: #eef2f3;
+            border-radius: 8px;
+        }
+        .result-title {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .result-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>좌뇌형 우뇌형 성향 진단 테스트</h1>
+    <form id="test-form">
+        <div id="questions-container"></div>
+        <div class="btn-container">
+            <button type="button" onclick="calculateResult()">진단하기</button>
+        </div>
+    </form>
+
+    <div id="result-section">
+        <div class="result-title" id="result-title-text"></div>
+        <div class="result-desc" id="result-desc-text"></div>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        "1. 문제를 해결할 때 논리적인 분석과 순서에 따라 차근차근 접근하는 편이다.",
+        "2. 직관이나 느낌보다는 구체적인 데이터와 사실을 더 신뢰한다.",
+        "3. 말로 표현하거나 글을 쓰는 언어 능력이 뛰어난 편이다.",
+        "4. 계획을 세우고 일정에 맞춰 철저하게 일하는 것을 좋아한다.",
+        "5. 수학 공식, 기호, 숫자 등을 다루는 작업이 상대적으로 수월하다.",
+        "6. 새로운 정보를 접할 때 전체적인 맥락보다 세부적인 디테일에 주목한다.",
+        "7. 감정에 치우치기보다는 이성적이고 객관적인 판단을 내리려고 노력한다.",
+        "8. 정리 정돈이 잘 되어 있는 체계적인 환경에서 안정감을 느낀다.",
+        "9. 대화할 때 결론을 명확하게 말하고 요점 위주로 이야기한다.",
+        "10. 시간 관리와 약속 시간을 엄수하는 것을 매우 중요하게 생각한다.",
+        "11. 전체적인 분위기나 직관적인 영감을 바탕으로 결정을 내릴 때가 많다.",
+        "12. 미술, 음악, 디자인 등 예술적인 활동에 흥미가 많고 감수성이 풍부하다.",
+        "13. 세부적인 절차보다 큰 그림을 먼저 그리며 창의적인 아이디어를 잘 떠올린다.",
+        "14. 복잡한 설명보다는 시각적인 이미지나 도표로 된 자료가 훨씬 이해하기 쉽다.",
+        "15. 틀에 박힌 규칙이나 형식보다는 자유롭고 유연한 환경을 선호한다.",
+        "16. 공간 지각 능력이 좋아서 길을 잘 찾거나 입체적인 구조를 금방 이해한다.",
+        "17. 논리적으로 설명하기 어렵지만 왠지 맞을 것 같은 예감이 잘 맞는다.",
+        "18. 글을 읽을 때 행간의 의미나 숨은 감정을 직관적으로 파악한다.",
+        "19. 한 번에 여러 가지 일을 동시에 처리하는 멀티태스킹에 익숙하다.",
+        "20. 고정관념에서 벗어난 엉뚱한 상상이나 독창적인 발상을 자주 한다."
+    ];
+
+    const container = document.getElementById('questions-container');
+
+    questions.forEach((q, index) => {
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerHTML = `
+            <div class="question-title">${q}</div>
+            <div class="options">
+                <label><input type="radio" name="q${index}" value="left" required> 그렇다</label>
+                <label><input type="radio" name="q${index}" value="right"> 아니다</label>
+            </div>
+        `;
+        container.appendChild(qBox);
+    });
+
+    // 1~10번은 좌뇌형 성향, 11~20번은 우뇌형 성향으로 점수 집계
+    function calculateResult() {
+        let leftScore = 0;
+        let rightScore = 0;
+
+        for (let i = 0; i < 20; i++) {
+            const radios = document.getElementsByName(`q${i}`);
+            let answered = false;
+            for (let r of radios) {
+                if (r.checked) {
+                    answered = true;
+                    if (i < 10 && r.value === 'left') leftScore++;
+                    if (i >= 10 && r.value === 'left') rightScore++; // 문항 구조상 11~20번은 우뇌형 문항
+                }
+            }
+            if (!answered) {
+                alert(`${i + 1}번 문항에 체크해 주세요.`);
+                return;
+            }
+        }
+
+        // 우뇌형 문항(11~20번)은 '그렇다'를 선택한 경우 우뇌 점수가 올라가도록 보정
+        let realLeft = 0;
+        let realRight = 0;
+
+        for (let i = 0; i < 20; i++) {
+            const radios = document.getElementsByName(`q${i}`);
+            for (let r of radios) {
+                if (r.checked) {
+                    if (i < 10) {
+                        if (r.value === 'left') realLeft++;
+                        else realRight++;
+                    } else {
+                        if (r.value === 'left') realRight++;
+                        else realLeft++;
+                    }
+                }
+            }
+        }
+
+        const total = realLeft + realRight;
+        const leftPercent = Math.round((realLeft / total) * 100);
+        const rightPercent = Math.round((realRight / total) * 100);
+
+        let titleText = `진단 결과: 좌뇌형 ${leftPercent}% / 우뇌형 ${rightPercent}%`;
+        let descText = "";
+
+        if (leftPercent > rightPercent) {
+            descText = `당신은 논리적이고 분석적인 성향이 강한 **좌뇌형**입니다.<br><br>` +
+                       `**성격 및 일하는 방식:** 체계적이고 계획성이 뛰어나며 객관적인 데이터를 바탕으로 문제를 해결합니다. 업무를 처리할 때 마감 기한을 철저히 지키며, 순서와 규칙에 따라 정확하게 수행하는 능력이 탁월합니다.<br><br>` +
+                       `**일상생활 특성:** 감정에 치우치기보다는 이성적으로 판단하며, 말이나 글로 생각을 명확하게 전달하는 것을 선호합니다. 주변 환경이 깔끔하게 정리되어 있을 때 편안함을 느낍니다.`;
+        } else if (rightPercent > leftPercent) {
+            descText = `당신은 직관적이고 창의적인 성향이 강한 **우뇌형**입니다.<br><br>` +
+                       `**성격 및 일하는 방식:** 틀에 박힌 규칙보다는 자유롭고 유연한 환경에서 뛰어난 아이디어를 발휘합니다. 세부적인 절차보다는 전체적인 그림을 먼저 그리는 거시적 안목을 가지고 있으며, 예술적 감각과 직관력이 뛰어납니다.<br><br>` +
+                       `**일상생활 특성:** 감성적이고 풍부한 상상력을 바탕으로 세상을 바라봅니다. 글보다는 시각적인 이미지나 분위기로 정보를 이해하는 편이며, 즉흥적이거나 새로운 도전을 즐기는 경향이 있습니다.`;
+        } else {
+            descText = `당신은 좌뇌와 우뇌의 능력이 조화롭게 균형을 이루는 **균형형**입니다.<br><br>` +
+                       `**성격 및 일하는 방식:** 논리적인 분석력과 창의적인 직관을 상황에 맞게 유연하게 활용할 수 있습니다. 계획성과 즉흥성을 모두 갖추고 있어 다양한 사람들과 원만하게 협업합니다.<br><br>` +
+                       `**일상생활 특성:** 이성과 감성의 균형이 잘 잡혀 있어 문제에 부딪혔을 때 다각도로 해결책을 찾아내는 유연한 사고방식을 가지고 있습니다.`;
+        }
+
+        document.getElementById('result-title-text').innerHTML = titleText;
+        document.getElementById('result-desc-text').innerHTML = descText;
+
+        const resultSection = document.getElementById('result-section');
+        resultSection.style.display = 'block';
+        resultSection.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
