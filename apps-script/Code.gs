@@ -59,6 +59,6 @@ function doPost(e){
     Object.assign(message,saveSubmission(p));
   }catch(error){message.error=String(error.message||'저장하지 못했습니다. 다시 제출해 주세요.').slice(0,160);}
   const data=JSON.stringify(message).replace(/</g,'\\u003c');
-  const html='<!doctype html><meta charset="utf-8"><p>제출 처리 결과를 퀴즈에 전달합니다.</p><script>window.top.postMessage('+data+','+JSON.stringify(QUIZ_ORIGIN)+');<\\/script>';
+  const html='<!doctype html><meta charset="utf-8"><p>제출 처리 결과를 퀴즈에 전달합니다.</p><script>window.top.postMessage('+data+','+JSON.stringify(QUIZ_ORIGIN)+');</script>';
   return HtmlService.createHtmlOutput(html).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
