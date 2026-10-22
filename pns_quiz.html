@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>말초신경계통 · 20문항 학습 퀴즈</title>
+<style>
+:root{color-scheme:light;--ink:#182b3a;--accent:#165849;--paper:#fff;--line:#b7c8c4}*{box-sizing:border-box}body{margin:0;background:#eef3f0;color:var(--ink);font-family:system-ui,'Malgun Gothic',sans-serif;font-size:20px;line-height:1.7}main{max-width:880px;margin:auto;padding:36px 22px 64px}header{border-top:7px solid var(--accent);padding:24px 0}h1{font-size:clamp(28px,5vw,40px);line-height:1.35;margin:10px 0}h2{font-size:25px;line-height:1.6}p{margin:12px 0}.eyebrow{color:var(--accent);letter-spacing:.08em;font-size:16px}.sub{font-size:17px;color:#435951}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;margin:22px 0;box-shadow:0 5px 20px #18392d08}.toolbar,.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.toolbar{justify-content:space-between}button,input,select{font:inherit}button,select{min-height:50px;border-radius:9px;padding:10px 17px;border:1px solid var(--accent);color:var(--accent);background:white;cursor:pointer}button.primary{background:var(--accent);color:white}button:disabled{opacity:.55;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex="-1"]:focus{outline:3px solid #9b4500;outline-offset:4px}fieldset{border:0;padding:0;margin:20px 0}legend{font-size:18px;padding:0;margin-bottom:10px}label.choice{display:flex;gap:14px;align-items:baseline;border:1px solid var(--line);border-radius:10px;margin:12px 0;padding:15px;cursor:pointer}label.choice:has(input:checked){background:#e4f0e9;border:2px solid var(--accent);padding:14px}input[type=radio]{width:23px;height:23px;flex-shrink:0}input[type=text]{width:100%;padding:14px;border:2px solid #638177;border-radius:9px}.feedback{border-left:6px solid var(--accent);background:#edf5ef;padding:20px;margin-top:24px}.feedback.wrong{border-color:#933222;background:#fff0eb}.feedback h3{margin:0;font-size:23px}.meta{color:#3c5c50;font-size:18px}.progress{height:9px;background:#d0dfd8;border-radius:10px;overflow:hidden;margin-top:12px}.progress span{display:block;background:var(--accent);height:100%}.nav{justify-content:space-between;margin-top:25px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.skip{position:absolute;top:-100px;left:15px;background:white;padding:10px}.skip:focus{top:10px}footer{font-size:16px;color:#435951}details{margin:15px 0}summary{cursor:pointer}#result{border:2px solid var(--accent)}[hidden]{display:none!important}@media(max-width:520px){main{padding:20px 14px 50px}.card{padding:20px}body{font-size:19px}.nav button{flex:1}select{max-width:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body><a class="skip" href="#question-title">문제로 바로 가기</a><main>
+<header><div class="eyebrow">해부생리 · 스스로 확인하는 학습</div><h1>말초신경계통 퀴즈</h1><p>뇌신경, 척수신경과 자율신경의 구조와 기능을 확인한다.</p><p class="sub">OX 6문항 · 4지선다 8문항 · 단답형 6문항</p></header><section class="card" aria-labelledby="name-title"><h2 id="name-title">학생 이름</h2><label for="student-name">이름</label><input id="student-name" type="text" maxlength="60" autocomplete="off" aria-describedby="name-help name-error"><p id="name-help" class="sub">이름만 입력한다. 20문항을 모두 푼 뒤 결과를 제출한다.</p><p id="name-error" role="alert"></p></section>
+<details class="card"><summary>이용 방법과 키보드 안내</summary><p>답을 선택하거나 입력한 뒤 ‘정답 확인’을 누른다. 정답·오답과 해설을 확인한 후 ‘다음 문제’로 이동한다. 문제 이동 메뉴에서 원하는 문제를 골라도 된다.</p><p>Tab 키로 이동하고 라디오 선택지는 방향키로 선택한다. 단답형은 Enter 키로 채점할 수 있다. 결과가 표시되면 읽기 초점이 피드백으로 이동한다. 정답은 색상과 함께 글자로 안내한다. 정답을 채점하면 딩동댕 소리, 오답을 채점하면 땡 소리가 난다. ‘효과음’ 버튼으로 두 소리를 켜거나 끌 수 있다.</p><p>단답형은 용어만 입력한다. 띄어쓰기와 일부 같은 뜻의 용어를 인정한다. 첫 채점 결과로 점수를 계산하며, 채점 후 해당 답은 변경할 수 없다.</p><p>응답은 이 창이 열려 있는 동안만 유지된다. 새로고침하거나 창을 닫으면 초기화된다. 결과 제출 버튼을 누르면 이름·점수·최초 답안이 선생님의 비공개 결과 시트로 전달된다. 결과 파일 저장은 내 기기에만 저장하며 온라인 제출과는 다르다.</p></details>
+<section aria-label="학습 진행 현황"><p id="score">채점 완료 0 / 20 · 정답 0문항</p><div class="progress" aria-hidden="true"><span id="bar" style="width:0%"></span></div></section>
+<div class="toolbar"><button id="sound-toggle" type="button" aria-pressed="true">효과음: 켜짐</button><p id="mode" class="sub">전체 20문항 학습</p><div><label for="jump" class="sub">문제 이동 </label><select id="jump"></select></div></div>
+<section class="card" aria-labelledby="question-title"><p id="meta" class="meta"></p><h2 id="question-title" tabindex="-1"></h2><form id="answer-form" novalidate><div id="answers"></div><button id="check" class="primary" type="submit">정답 확인</button><p id="error" role="alert"></p></form>
+<section id="feedback" class="feedback" tabindex="-1" aria-labelledby="feedback-title" hidden><h3 id="feedback-title">정답과 해설</h3><p id="correct-answer"></p><p id="explanation"></p></section>
+<nav class="nav" aria-label="문제 탐색"><button id="next" type="button">다음 문제</button><button id="prev" type="button">이전 문제</button></nav><p id="reference" class="sub" hidden></p></section>
+<section id="result" class="card" tabindex="-1" aria-labelledby="result-title" hidden><h2 id="result-title">학습 결과</h2><p id="summary"></p><div id="breakdown"></div><section id="missing-panel" aria-labelledby="missing-title" hidden><h3 id="missing-title">아직 채점하지 않은 문항</h3><p>아래 번호를 눌러 이동한 뒤 정답 확인을 눌러 주세요. 모든 문항을 채점하면 선생님께 제출할 수 있습니다.</p><div id="missing-questions" class="nav"></div></section><section id="submission-panel" aria-labelledby="submit-title" hidden><h3 id="submit-title">결과 제출</h3><p id="connection-status">결과 제출 연결을 확인하고 있습니다.</p><div class="toolbar"><button id="submit-result" type="button" class="primary" disabled>선생님께 결과 제출</button><button id="save-result" type="button">결과 파일 저장</button></div><p id="submit-status" role="status" aria-live="polite" aria-atomic="true"></p></section><div class="toolbar"><button id="review" type="button">틀린 문제 다시 보기</button><button id="all" type="button">전체 문제 보기</button><button id="reset" type="button">처음부터 다시 풀기</button></div><p class="sub">‘틀린 문제 다시 보기’에서는 첫 답과 해설을 복습한다. 새로 풀려면 ‘처음부터 다시 풀기’를 선택한다.</p></section>
+
+<noscript><p>이 퀴즈를 실행하려면 자바스크립트를 지원하는 브라우저에서 파일을 열어야 한다.</p></noscript>
+</main><script>
+const questions=[{"type":"OX","level":"하","text":"뇌신경은 12쌍이고 척수신경은 31쌍이다.","options":["O: 맞다","X: 틀리다"],"answer":0,"ex":"뇌신경은 12쌍이다. 척수신경은 경신경 8쌍, 흉신경 12쌍, 요신경 5쌍, 천골신경 5쌍, 미골신경 1쌍으로 총 31쌍이다.","slide":[1,10]},{"type":"OX","level":"하","text":"전정와우신경은 청각과 평형감각을 전달하는 운동신경이다.","options":["O: 맞다","X: 틀리다"],"answer":1,"ex":"전정와우신경은 감각신경이다. 와우신경은 청각 정보를, 전정신경은 평형 유지에 필요한 정보를 전달한다.","slide":5},{"type":"OX","level":"중","text":"부신경은 흉쇄유돌근과 승모근을 지배하여 고개를 돌리거나 어깨를 올리는 움직임에 관여한다.","options":["O: 맞다","X: 틀리다"],"answer":0,"ex":"부신경은 흉쇄유돌근과 승모근을 지배하는 운동신경이다.","slide":9},{"type":"OX","level":"중","text":"모든 척수신경은 예외 없이 추간공을 통해 척추 밖으로 나온다.","options":["O: 맞다","X: 틀리다"],"answer":1,"ex":"제1경신경은 후두골과 제1경추 사이로 나온다. 천골 부위에서는 신경가지가 천골공 등을 통해 나온다.","slide":11},{"type":"OX","level":"상","text":"자율신경섬유는 일부 뇌신경과 척수신경을 통해 주행하므로, 자율신경을 이들과 완전히 별개인 세 번째 종류의 신경으로 구분하는 것은 적절하지 않다.","options":["O: 맞다","X: 틀리다"],"answer":0,"ex":"뇌신경과 척수신경은 연결 부위에 따른 구분이다. 자율신경계통은 기능에 따른 구분이므로 같은 기준의 세 종류로 나열하면 오해가 생길 수 있다.","slide":3},{"type":"OX","level":"상","text":"자율신경계통의 조절은 말초에서만 이루어지므로 시상하부·뇌간·척수는 관여하지 않는다.","options":["O: 맞다","X: 틀리다"],"answer":1,"ex":"자율신경계통은 시상하부·뇌간·척수의 중추와 말초의 자율신경 및 신경절이 함께 작용한다.","slide":12},{"type":"4지선다","level":"하","text":"음식의 냄새를 맡을 때 후각 정보를 전달하는 신경은 무엇인가?","options":["후신경","시신경","안면신경","전정와우신경"],"answer":0,"ex":"후신경은 제1뇌신경이며 후각 정보를 전달하는 감각신경이다.","slide":5},{"type":"4지선다","level":"하","text":"외직근을 지배하여 안구를 바깥쪽으로 움직이는 신경은 무엇인가?","options":["동안신경","활차신경","외전신경","설하신경"],"answer":2,"ex":"외전신경은 제6뇌신경이며 외직근을 지배한다.","slide":6},{"type":"4지선다","level":"하","text":"다음 중 부교감신경의 대표적인 작용은 무엇인가?","options":["기관지 확장","심박수 감소","동공 확장","소화관 운동 억제"],"answer":1,"ex":"부교감신경은 심박수를 감소시키고 소화관 운동과 분비를 촉진한다.","slide":15},{"type":"4지선다","level":"중","text":"상사근을 지배하여 안구의 안쪽 회전과 아래쪽 움직임 등에 관여하는 신경은 무엇인가?","options":["동안신경","활차신경","외전신경","부신경"],"answer":1,"ex":"활차신경은 제4뇌신경이며 상사근을 지배한다. 상사근의 구체적인 작용은 안구의 위치에 따라 달라진다.","slide":6},{"type":"4지선다","level":"중","text":"설인신경의 기능을 바르게 설명한 것은 무엇인가?","options":["외직근을 지배하고 안구를 바깥쪽으로 움직인다.","표정근을 지배하고 혀 앞쪽의 미각을 전달한다.","경상인두근을 지배하고 혀 뒤쪽의 미각을 전달한다.","승모근을 지배하고 어깨를 올리는 움직임에 관여한다."],"answer":2,"ex":"설인신경은 경상인두근을 지배하여 삼킴을 돕고, 주로 혀 뒤쪽 3분의 1의 미각을 전달한다.","slide":8},{"type":"4지선다","level":"중","text":"제8경신경이 척추 밖으로 나오는 위치는 어디인가?","options":["후두골과 제1경추 사이","제1경추와 제2경추 사이","제6경추와 제7경추 사이","제7경추와 제1흉추 사이"],"answer":3,"ex":"경추는 7개이지만 경신경은 8쌍이다. 제8경신경은 제7경추와 제1흉추 사이로 나온다.","slide":10},{"type":"4지선다","level":"상","text":"혀 앞쪽 3분의 2에서 촉각과 온도감각은 유지되지만 미각 전달에 문제가 생겼다. 두 감각의 담당 신경을 고려할 때, 미각 전달과 가장 관련이 깊은 신경은 무엇인가?","options":["삼차신경","외전신경","안면신경","설하신경"],"answer":2,"ex":"혀 앞쪽 3분의 2의 일반감각은 삼차신경이, 미각은 주로 안면신경이 전달한다. 두 감각의 전달 경로를 구분해야 한다.","slide":7},{"type":"4지선다","level":"상","text":"척수신경의 신경근과 정보 전달 방향을 바르게 설명한 것은 무엇인가?","options":["감각 정보는 전근으로 들어오고, 운동 명령은 후근으로 나간다.","감각 정보와 운동 명령은 모두 후근을 통해 전달된다.","감각 정보와 운동 명령은 모두 전근을 통해 전달된다.","감각 정보는 후근으로 들어오고, 운동 명령은 전근으로 나간다."],"answer":3,"ex":"감각 정보는 후근을 통해 척수로 들어오고, 운동 명령은 전근을 통해 척수 밖으로 나간다.","slide":11},{"type":"단답형","level":"하","text":"망막에서 받아들인 시각 정보를 뇌로 전달하는 제2뇌신경의 이름을 쓰시오.","answers":["시신경"],"ex":"시신경은 망막에서 받아들인 시각 정보를 뇌로 전달한다.","slide":5},{"type":"단답형","level":"하","text":"혀 근육 대부분의 운동을 지배하여 혀를 내밀거나 움직이는 데 관여하는 제12뇌신경의 이름을 쓰시오.","answers":["설하신경"],"ex":"설하신경은 혀 근육 대부분의 운동을 지배한다.","slide":9},{"type":"단답형","level":"하","text":"척수신경은 감각섬유와 운동섬유를 함께 포함한다. 이처럼 감각과 운동 기능을 함께 가진 신경을 무엇이라고 하는가?","answers":["혼합신경"],"ex":"혼합신경은 감각 정보를 전달하는 섬유와 운동 명령을 전달하는 섬유를 함께 포함한다.","slide":11},{"type":"단답형","level":"하","text":"갑자기 놀라거나 긴장했을 때 심박수를 증가시키고 동공을 확장하는 자율신경은 무엇인가?","answers":["교감신경","교감신경계","교감신경계통"],"ex":"교감신경은 신체가 긴장 상황에 대처하도록 작용한다.","slide":13},{"type":"단답형","level":"상","text":"인두와 후두의 운동·감각에 관여하고, 심장·폐·소화기관 등 여러 내장기관의 감각 전달과 부교감 기능을 함께 수행하는 혼합신경의 이름을 쓰시오.","answers":["미주신경"],"ex":"미주신경은 제10뇌신경으로 감각·운동·부교감신경섬유를 포함한다.","slide":8},{"type":"단답형","level":"하","text":"얼굴의 표정근을 움직여 미소를 짓거나 눈을 감는 데 관여하는 제7뇌신경의 이름을 쓰시오.","answers":["안면신경"],"ex":"안면신경은 표정근의 운동을 담당하며, 혀 앞쪽의 미각 전달에도 관여한다.","slide":7}];
+const states=questions.map(()=>({draft:'',checked:false,correct:false}));
+let order=questions.map((_,i)=>i),pos=0;
+const $=id=>document.getElementById(id);
+let soundEnabled=true;
+let quizAudioContext=null;
+function playFeedbackSound(correct){
+  if(!soundEnabled)return;
+  try{
+    const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContextClass)return;
+    if(!quizAudioContext||quizAudioContext.state==='closed')quizAudioContext=new AudioContextClass();
+    const ctx=quizAudioContext;
+    function ring(){
+      if(!soundEnabled||ctx.state!=='running')return;
+      const t=ctx.currentTime;
+      const notes=correct
+        ?[{hz:659.25,offset:0,duration:0.23},{hz:523.25,offset:0.25,duration:0.23},{hz:783.99,offset:0.50,duration:0.43}]
+        :[{hz:196,offset:0,duration:0.34},{hz:207,offset:0,duration:0.34}];
+      for(const note of notes){
+        const start=t+note.offset,end=start+note.duration;
+        const gain=ctx.createGain();
+        gain.gain.setValueAtTime(0,start);
+        gain.gain.linearRampToValueAtTime(correct?0.20:0.14,start+0.012);
+        gain.gain.exponentialRampToValueAtTime(0.001,end-0.015);
+        gain.connect(ctx.destination);
+        const tone=ctx.createOscillator();
+        tone.type='triangle';
+        tone.frequency.setValueAtTime(note.hz,start);
+        if(!correct)tone.frequency.exponentialRampToValueAtTime(note.hz*0.88,end-0.06);
+        tone.connect(gain);
+        tone.onended=()=>{tone.disconnect();gain.disconnect();};
+        tone.start(start);tone.stop(end);
+      }
+    }
+    if(ctx.state==='suspended')ctx.resume().then(ring).catch(()=>{});else ring();
+  }catch{}
+}
+$('sound-toggle').addEventListener('click',()=>{
+  soundEnabled=!soundEnabled;
+  $('sound-toggle').setAttribute('aria-pressed',String(soundEnabled));
+  $('sound-toggle').textContent='효과음: '+(soundEnabled?'켜짐':'꺼짐');
+});
+
+const normalize=s=>String(s).normalize('NFKC').toLowerCase().replace(/[\s.,。·ㆍ]/g,'');
+function isCorrect(q,value){return q.type==='단답형'?q.answers.some(a=>normalize(a)===normalize(value)):Number(value)===q.answer;}
+function answerText(q,value){return q.type==='단답형'?String(value):q.options[Number(value)];}
+function correctText(q){return q.type==='단답형'?q.answers[0]:q.options[q.answer];}
+function updateScore(){const done=states.filter(s=>s.checked).length,right=states.filter(s=>s.checked&&s.correct).length;$('score').textContent=`채점 완료 ${done} / 20 · 정답 ${right}문항`;$('bar').style.width=`${done/20*100}%`;if(done===20)showResult(false);}
+function updateJump(){const sel=$('jump');sel.replaceChildren();order.forEach((i,j)=>{const o=document.createElement('option');o.value=j;o.textContent=`${i+1}번 · ${questions[i].type} · ${states[i].checked?(states[i].correct?'정답':'오답'):'미채점'}`;sel.append(o)});sel.value=pos;}
+function showFeedback(q,s){$('feedback').hidden=false;$('feedback').className='feedback'+(s.correct?'':' wrong');$('feedback-title').textContent=s.correct?'정답입니다 천재 아닌가요?':'틀렸습니다 열공하세요!';$('correct-answer').textContent='정답: '+(q.type==='OX'?(q.answer===0?'O':'X'):correctText(q));$('explanation').textContent='해설: '+q.ex;$('reference').hidden=false;$('reference').textContent='출처: 말초신경계통 수업자료 '+(Array.isArray(q.slide)?q.slide.join(', '):q.slide)+'번 슬라이드'+(q.type==='단답형'&&q.answers.length>1?' · 인정 답안: '+q.answers.join(', '):'');}
+function render(focus=true){const i=order[pos],q=questions[i],s=states[i];$('meta').textContent=`전체 ${i+1}번 / 20 · ${q.type} · 난이도 ${q.level}`;$('question-title').textContent=q.text;$('answers').replaceChildren();$('error').textContent='';$('feedback').hidden=true;$('reference').hidden=true;
+if(q.type==='단답형'){const label=document.createElement('label');label.htmlFor='short-answer';label.textContent='답 입력';const inp=document.createElement('input');inp.type='text';inp.id='short-answer';inp.autocomplete='off';inp.maxLength=200;inp.value=s.draft;inp.disabled=s.checked;inp.addEventListener('input',()=>s.draft=inp.value);$('answers').append(label,inp);}else{const field=document.createElement('fieldset');const legend=document.createElement('legend');legend.textContent=q.type==='OX'?'OX 선택':'가장 적절한 답 하나를 선택한다.';if(q.type==='OX')legend.className='sr-only';field.append(legend);q.options.forEach((opt,j)=>{const label=document.createElement('label');label.className='choice';const radio=document.createElement('input');radio.type='radio';radio.name='choice';radio.value=j;radio.checked=s.draft!==''&&Number(s.draft)===j;radio.disabled=s.checked;radio.addEventListener('change',()=>s.draft=String(j));const span=document.createElement('span');span.textContent=(q.type==='4지선다'?`${j+1}. `:'')+opt;label.append(radio,span);field.append(label)});$('answers').append(field);}
+$('check').disabled=s.checked;$('check').textContent=s.checked?'채점 완료':'정답 확인';if(s.checked)showFeedback(q,s);$('prev').disabled=pos===0;$('next').textContent=pos===order.length-1?'학습 현황 확인':'다음 문제';updateJump();if(!$('result').hidden)showResult(false);if(focus)$('question-title').focus();}
+$('answer-form').addEventListener('submit',e=>{e.preventDefault();const i=order[pos],s=states[i],q=questions[i];if(s.checked)return;if(!validStudentName())return;if(!String(s.draft).trim()){$('error').textContent='답을 선택하거나 입력한 뒤 정답 확인을 누른다.';return;}s.correct=isCorrect(q,s.draft);s.checked=true;playFeedbackSound(s.correct);updateScore();render(false);$('feedback').focus();});
+$('prev').addEventListener('click',()=>{if(pos>0){pos--;render();}});
+$('next').addEventListener('click',()=>{if(pos<order.length-1){pos++;render();}else showResult(true);});
+$('jump').addEventListener('change',e=>{pos=Number(e.target.value);render();});
+function showResult(focus){$('result').hidden=false;const done=states.filter(s=>s.checked).length,right=states.filter(s=>s.correct).length,wrong=done-right;$('summary').textContent=`전체 20문항 중 ${done}문항 채점 완료. 정답 ${right}문항, 오답 ${wrong}문항, 미채점 ${20-done}문항. ${done===20?'최종 점수':'현재 점수'}: ${right} / 20점. 문항당 1점이다.`;const box=$('breakdown');box.replaceChildren();for(const type of ['OX','4지선다','단답형']){const items=questions.map((q,i)=>({q,s:states[i]})).filter(x=>x.q.type===type);const p=document.createElement('p');p.textContent=`${type}: 정답 ${items.filter(x=>x.s.correct).length} / ${items.length}문항, 채점 ${items.filter(x=>x.s.checked).length}문항`;box.append(p)}const missing=states.map((s,i)=>s.checked?-1:i).filter(i=>i>=0);$('missing-panel').hidden=missing.length===0;const links=$('missing-questions');links.replaceChildren();missing.forEach(i=>{const button=document.createElement('button');button.type='button';button.textContent=(i+1)+'번';button.setAttribute('aria-label',(i+1)+'번 미채점 문항으로 이동');button.addEventListener('click',()=>{order=questions.map((_,j)=>j);pos=i;$('mode').textContent='전체 20문항 학습';render();$('question-title').scrollIntoView({block:'center'});});links.append(button)});$('review').disabled=wrong===0;refreshSubmissionControls();if(focus)$('result').focus();}
+$('review').addEventListener('click',()=>{order=states.map((s,i)=>s.checked&&!s.correct?i:-1).filter(i=>i>=0);pos=0;$('mode').textContent=`오답 ${order.length}문항 복습`;render();});
+$('all').addEventListener('click',()=>{order=questions.map((_,i)=>i);pos=0;$('mode').textContent='전체 20문항 학습';render();});
+$('reset').addEventListener('click',()=>{if(!confirm('모든 답과 채점 결과를 지우고 처음부터 다시 풀겠는가?'))return;resetSubmission();states.forEach(s=>{s.draft='';s.checked=false;s.correct=false});order=questions.map((_,i)=>i);pos=0;$('mode').textContent='전체 20문항 학습';$('result').hidden=true;updateScore();render();});
+
+const QUIZ_VERSION='pns-20261022-1';
+let submissionEndpoint='',submissionState='idle',pendingSubmission=null,submitTimer=null,activeSubmitFrame=null,frozenPayload=null;
+function newAttemptId(){const bytes=new Uint8Array(16);crypto.getRandomValues(bytes);return 'pns-'+Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');}
+let attemptId=newAttemptId();
+function validStudentName(){
+ const name=$('student-name').value.trim();
+ if(!name||name.length>60){$('name-error').textContent='이름을 입력해 주세요. 60자 이내로 입력할 수 있습니다.';$('student-name').focus();return false;}
+ $('name-error').textContent='';return true;
+}
+function completedAll(){return states.length===20&&states.every(s=>s.checked);}
+function refreshSubmissionControls(){
+ const complete=completedAll();$('submission-panel').hidden=!complete;
+ $('submit-result').disabled=!complete||!submissionEndpoint||submissionState==='sending'||submissionState==='sent';
+ $('save-result').disabled=!complete;$('reset').disabled=submissionState==='sending';
+}
+function collectSubmission(){
+ if(!completedAll())throw Error('20문항을 모두 풀어 주세요.');
+ const name=$('student-name').value.trim();if(!name||name.length>60)throw Error('이름을 입력해 주세요.');
+ return {version:QUIZ_VERSION,attemptId,name,answers:states.map(s=>String(s.draft))};
+}
+function describeResult(){
+ const p=collectSubmission();let score=0;const wrong=[],numbers=[];
+ questions.forEach((q,i)=>{if(isCorrect(q,p.answers[i]))score++;else{numbers.push(i+1);wrong.push((i+1)+'번: '+q.text+'\n학생 답: '+answerText(q,p.answers[i])+'\n정답: '+correctText(q));}});
+ return '말초신경계통 퀴즈 결과\n학생 이름: '+p.name+'\n점수: '+score+' / 20점\n틀린 문항 번호: '+(numbers.join(', ')||'없음')+'\n제출 상태: '+(submissionState==='sent'?'선생님께 제출 완료':'온라인 제출 미확인')+'\n\n'+(wrong.join('\n\n')||'모두 정답입니다.')+'\n';
+}
+function resetSubmission(){
+ if(submitTimer)clearTimeout(submitTimer);if(activeSubmitFrame)activeSubmitFrame.remove();
+ activeSubmitFrame=null;pendingSubmission=null;frozenPayload=null;submissionState='idle';attemptId=newAttemptId();
+ $('student-name').disabled=false;$('submit-result').textContent='선생님께 결과 제출';$('submit-status').textContent='';
+}
+function beginSubmission(){
+ if(!completedAll()||submissionState==='sending'||submissionState==='sent')return;
+ if(!validStudentName())return;
+ if(!submissionEndpoint){$('submit-status').textContent='아직 선생님께 제출할 수 없습니다. 결과 파일을 저장하고 선생님께 알려 주세요.';return;}
+ frozenPayload=frozenPayload||collectSubmission();submissionState='sending';pendingSubmission=frozenPayload.attemptId;
+ $('student-name').disabled=true;$('submit-status').textContent='결과를 제출하고 있습니다. 이 창을 닫지 마세요.';refreshSubmissionControls();
+ if(activeSubmitFrame)activeSubmitFrame.remove();
+ const frame=document.createElement('iframe');frame.name='pns-submit-'+Date.now();frame.hidden=true;frame.title='결과 제출 처리';document.body.append(frame);activeSubmitFrame=frame;
+ const form=document.createElement('form');form.method='POST';form.action=submissionEndpoint;form.target=frame.name;form.hidden=true;
+ const field=document.createElement('input');field.type='hidden';field.name='payload';field.value=JSON.stringify(frozenPayload);form.append(field);document.body.append(form);
+ submitTimer=setTimeout(()=>{if(submissionState!=='sending')return;submissionState='failed';$('submit-status').textContent='제출 완료를 확인하지 못했습니다. 같은 결과를 다시 제출하거나 결과 파일을 저장해 주세요.';refreshSubmissionControls();},45000);
+ try{form.submit();}catch{clearTimeout(submitTimer);submissionState='failed';$('submit-status').textContent='제출을 시작하지 못했습니다. 다시 제출해 주세요.';refreshSubmissionControls();}
+ finally{form.remove();}
+}
+window.addEventListener('message',event=>{
+ const googleOrigin=event.origin==='https://script.google.com'||/^https:\/\/(?:[a-z0-9-]+\.)*googleusercontent\.com$/.test(event.origin),data=event.data;
+ if(!googleOrigin||!data||data.type!=='pns-quiz-submission'||data.attemptId!==pendingSubmission||!['sending','failed'].includes(submissionState))return;
+ clearTimeout(submitTimer);
+ if(data.ok===true&&Number.isInteger(data.score)&&data.score>=0&&data.score<=20){submissionState='sent';$('submit-result').textContent='제출 완료';$('submit-status').textContent='선생님께 결과가 저장되었습니다. '+data.score+'점 / 20점.';}
+ else{submissionState='failed';$('submit-status').textContent='결과를 저장하지 못했습니다. '+(typeof data.error==='string'?data.error:'다시 제출해 주세요.');}
+ refreshSubmissionControls();
+});
+$('student-name').addEventListener('input',()=>{$('name-error').textContent='';});
+$('submit-result').addEventListener('click',beginSubmission);
+$('save-result').addEventListener('click',()=>{
+ if(!validStudentName()||!completedAll())return;
+ const blob=new Blob([describeResult()],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='pns_quiz_result.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+fetch('pns_submission_config.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('config');return r.json();}).then(config=>{
+ const endpoint=typeof config.endpoint==='string'?config.endpoint.trim():'';
+ if(!/^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec$/.test(endpoint))throw Error('not configured');
+ submissionEndpoint=endpoint;$('connection-status').textContent='20문항을 모두 풀고 결과 제출 버튼을 눌러 주세요. 이름·점수·답안이 선생님께 전달됩니다.';refreshSubmissionControls();
+}).catch(()=>{$('connection-status').textContent='온라인 제출 연결이 아직 완료되지 않았습니다. 지금은 문제 풀이와 결과 파일 저장만 이용할 수 있습니다.';refreshSubmissionControls();});
+refreshSubmissionControls();
+
+render(false);
+</script></body></html>

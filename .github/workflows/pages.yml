@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p _site
           find . -maxdepth 1 -type f -name '*.html' -exec cp {} _site/ \;
-          cp cns_submission_config.json _site/
+          cp cns_submission_config.json pns_submission_config.json _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
