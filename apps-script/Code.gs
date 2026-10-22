@@ -36,6 +36,7 @@ function saveSubmission(p){
   try{
     const book=SpreadsheetApp.openById(resultsSheetId());
     const sheet=book.getSheetByName('제출결과');if(!sheet)throw Error('결과 시트가 없습니다.');
+    sheet.getRange(1,9).setValue('전체 답안');
     const last=sheet.getLastRow();
     if(last>1){
       const found=sheet.getRange(2,7,last-1,1).createTextFinder(result.attemptId).matchEntireCell(true).findNext();
@@ -43,7 +44,7 @@ function saveSubmission(p){
     }
     const details=result.wrong.map(w=>w.number+'번: '+w.question+'\n학생 답: '+w.student+' / 정답: '+w.correct).join('\n\n')||'모두 정답';
     const timestamp=Utilities.formatDate(new Date(),'Asia/Seoul','yyyy-MM-dd HH:mm:ss');
-    const row=[timestamp,safeCell(result.name),result.score,result.wrong.length,result.wrong.map(w=>w.number).join(', ')||'없음',safeCell(details),result.attemptId,result.version];
+    const row=[timestamp,safeCell(result.name),result.score,result.wrong.length,result.wrong.map(w=>w.number).join(', ')||'없음',safeCell(details),result.attemptId,result.version,safeCell(QUESTIONS.map((q,i)=>(i+1)+'번: '+(q.type==='단답형'?p.answers[i]:q.options[Number(p.answers[i])])).join('\n'))];
     sheet.getRange(last+1,1,1,row.length).setValues([row]);
     SpreadsheetApp.flush();
     return {ok:true,attemptId:result.attemptId,score:result.score};
